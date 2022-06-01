@@ -1,0 +1,34 @@
+NOTES
+
+BG 1 + 2 enabled, not 3
+
+bits
+15 = 0 H, 1 V - for mode 4 only
+14 = BG2
+13 = BG1
+10-12 = xxx
+0-9 = scroll offset
+
+H offsets, low 3 bits are ignored
+
+20 04
+20 05
+-
+20 0f
+
+try 60 05
+
+left column never works
+
+BG3HOFS and BG3VOFS will affect it - just affects which map row to use, where is our table located in
+map 3?
+
+it's a row of H offsets then a row of V offsets
+$20 x 2 bytes per row
+
+The left most column is skipped, but you can change the Vertical Scrolling of that layer to shift the left most column... if a column has OPT active, then it ignores the layer's scroll registers and uses the OPT instead.
+
+
+
+
+
